@@ -1,64 +1,64 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { 
-  BookOpen, 
-  Calendar, 
-  Clock, 
-  Trophy,
-  Users,
-  FileText,
-  Video,
-  Bell,
-  TrendingUp,
-  CheckCircle,
-  AlertCircle
-} from "lucide-react";
-
+import { BookOpen, Calendar, Clock, Trophy, Users, FileText, Video, Bell, TrendingUp, CheckCircle, AlertCircle } from "lucide-react";
 const Dashboard = () => {
-  const courses = [
-    {
-      name: "Data Structures & Algorithms",
-      progress: 75,
-      instructor: "Dr. Ravi Kumar",
-      nextClass: "Today, 10:00 AM",
-      status: "In Progress"
-    },
-    {
-      name: "Computer Networks",
-      progress: 60,
-      instructor: "Prof. Priya Sharma",
-      nextClass: "Tomorrow, 2:00 PM",
-      status: "In Progress"
-    },
-    {
-      name: "Database Management",
-      progress: 85,
-      instructor: "Dr. Suresh Reddy",
-      nextClass: "Friday, 11:00 AM",
-      status: "Near Complete"
-    }
-  ];
-
-  const todaySchedule = [
-    { subject: "Data Structures", time: "10:00 - 11:00 AM", room: "Lab 1", teacher: "Dr. Ravi Kumar" },
-    { subject: "Computer Networks", time: "11:00 - 12:00 PM", room: "Room 203", teacher: "Prof. Priya" },
-    { subject: "Database Lab", time: "2:00 - 4:00 PM", room: "Lab 2", teacher: "Dr. Suresh" }
-  ];
-
-  const announcements = [
-    { title: "Mid-term Exams Schedule Released", time: "2 hours ago", priority: "high" },
-    { title: "New Library Books Available", time: "1 day ago", priority: "medium" },
-    { title: "Campus Event: Tech Fest 2024", time: "3 days ago", priority: "low" }
-  ];
-
-  return (
-    <div className="min-h-screen pt-20 pb-8 bg-background">
+  const courses = [{
+    name: "Data Structures & Algorithms",
+    progress: 75,
+    instructor: "Dr. Ravi Kumar",
+    nextClass: "Today, 10:00 AM",
+    status: "In Progress"
+  }, {
+    name: "Computer Networks",
+    progress: 60,
+    instructor: "Prof. Priya Sharma",
+    nextClass: "Tomorrow, 2:00 PM",
+    status: "In Progress"
+  }, {
+    name: "Database Management",
+    progress: 85,
+    instructor: "Dr. Suresh Reddy",
+    nextClass: "Friday, 11:00 AM",
+    status: "Near Complete"
+  }];
+  const todaySchedule = [{
+    subject: "Data Structures",
+    time: "10:00 - 11:00 AM",
+    room: "Lab 1",
+    teacher: "Dr. Ravi Kumar"
+  }, {
+    subject: "Computer Networks",
+    time: "11:00 - 12:00 PM",
+    room: "Room 203",
+    teacher: "Prof. Priya"
+  }, {
+    subject: "Database Lab",
+    time: "2:00 - 4:00 PM",
+    room: "Lab 2",
+    teacher: "Dr. Suresh"
+  }];
+  const announcements = [{
+    title: "Mid-term Exams Schedule Released",
+    time: "2 hours ago",
+    priority: "high"
+  }, {
+    title: "New Library Books Available",
+    time: "1 day ago",
+    priority: "medium"
+  }, {
+    title: "Campus Event: Tech Fest 2024",
+    time: "3 days ago",
+    priority: "low"
+  }];
+  return <div className="min-h-screen pt-20 pb-8 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Welcome Header */}
         <div className="mb-8 animate-fade-in">
           <h1 className="text-3xl font-bold text-foreground mb-2">
-            Welcome back, <span className="text-primary">Arjun Reddy</span>
+            Welcome back, <span className="text-primary">SURUVU NARESH
+
+          </span>
           </h1>
           <p className="text-muted-foreground">
             Here's what's happening in your academic journey today.
@@ -110,8 +110,7 @@ const Dashboard = () => {
                 <CardDescription>Track your progress across all subjects</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                {courses.map((course, index) => (
-                  <div key={index} className="space-y-2">
+                {courses.map((course, index) => <div key={index} className="space-y-2">
                     <div className="flex justify-between items-center">
                       <div>
                         <h4 className="font-medium">{course.name}</h4>
@@ -123,8 +122,7 @@ const Dashboard = () => {
                       </div>
                     </div>
                     <Progress value={course.progress} className="h-2" />
-                  </div>
-                ))}
+                  </div>)}
                 <Button variant="outline" className="w-full mt-4">
                   View All Courses
                 </Button>
@@ -142,8 +140,7 @@ const Dashboard = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  {todaySchedule.map((class_, index) => (
-                    <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
+                  {todaySchedule.map((class_, index) => <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
                       <div>
                         <h4 className="font-medium">{class_.subject}</h4>
                         <p className="text-sm text-muted-foreground">{class_.teacher}</p>
@@ -152,8 +149,7 @@ const Dashboard = () => {
                         <p className="text-sm font-medium">{class_.time}</p>
                         <p className="text-xs text-muted-foreground">{class_.room}</p>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </CardContent>
             </Card>
@@ -196,19 +192,13 @@ const Dashboard = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  {announcements.map((announcement, index) => (
-                    <div key={index} className="flex items-start gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
-                      {announcement.priority === 'high' ? (
-                        <AlertCircle className="h-4 w-4 text-destructive mt-1 flex-shrink-0" />
-                      ) : (
-                        <Bell className="h-4 w-4 text-muted-foreground mt-1 flex-shrink-0" />
-                      )}
+                  {announcements.map((announcement, index) => <div key={index} className="flex items-start gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
+                      {announcement.priority === 'high' ? <AlertCircle className="h-4 w-4 text-destructive mt-1 flex-shrink-0" /> : <Bell className="h-4 w-4 text-muted-foreground mt-1 flex-shrink-0" />}
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-medium leading-tight">{announcement.title}</p>
                         <p className="text-xs text-muted-foreground">{announcement.time}</p>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </CardContent>
             </Card>
@@ -247,8 +237,6 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Dashboard;
