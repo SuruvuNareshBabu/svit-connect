@@ -90,20 +90,11 @@ const Profile = () => {
             <p className="text-muted-foreground">Manage your personal and academic information</p>
           </div>
           <Button 
-            onClick={() => setIsEditing(!isEditing)}
-            variant={isEditing ? "destructive" : "outline"}
+            variant="outline"
+            disabled
           >
-            {isEditing ? (
-              <>
-                <X className="mr-2 h-4 w-4" />
-                Cancel
-              </>
-            ) : (
-              <>
-                <Edit className="mr-2 h-4 w-4" />
-                Edit Profile
-              </>
-            )}
+            <Edit className="mr-2 h-4 w-4" />
+            Edit Profile
           </Button>
         </div>
 
@@ -149,26 +140,26 @@ const Profile = () => {
                   </div>
                   <div>
                     <Label>Full Name</Label>
-                    <Input value={studentData.name} disabled={!isEditing} />
+                    <Input value={studentData.name} disabled />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <Label>Gender</Label>
-                      <Input value={studentData.gender} disabled={!isEditing} />
+                      <Input value={studentData.gender} disabled />
                     </div>
                     <div>
                       <Label>Date of Birth</Label>
-                      <Input value={studentData.dob} disabled={!isEditing} />
+                      <Input value={studentData.dob} disabled />
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <Label>Nationality</Label>
-                      <Input value={studentData.nationality} disabled={!isEditing} />
+                      <Input value={studentData.nationality} disabled />
                     </div>
                     <div>
                       <Label>Religion</Label>
-                      <Input value={studentData.religion} disabled={!isEditing} />
+                      <Input value={studentData.religion} disabled />
                     </div>
                   </div>
                 </CardContent>
@@ -186,25 +177,25 @@ const Profile = () => {
                       <Mail className="h-4 w-4" />
                       Email Address
                     </Label>
-                    <Input value={studentData.email} disabled={!isEditing} />
+                    <Input value={studentData.email} disabled />
                   </div>
                   <div>
                     <Label className="flex items-center gap-2">
                       <Phone className="h-4 w-4" />
                       Phone Number
                     </Label>
-                    <Input value={studentData.phone} disabled={!isEditing} />
+                    <Input value={studentData.phone} disabled />
                   </div>
                   <div>
                     <Label className="flex items-center gap-2">
                       <MapPin className="h-4 w-4" />
                       Present Address
                     </Label>
-                    <Input value={studentData.presentAddress} disabled={!isEditing} />
+                    <Input value={studentData.presentAddress} disabled />
                   </div>
                   <div>
                     <Label>Permanent Address</Label>
-                    <Input value={studentData.permanentAddress} disabled={!isEditing} />
+                    <Input value={studentData.permanentAddress} disabled />
                   </div>
                 </CardContent>
               </Card>
@@ -219,46 +210,34 @@ const Profile = () => {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                       <Label>Father's Name</Label>
-                      <Input value={studentData.fatherName} disabled={!isEditing} />
+                      <Input value={studentData.fatherName} disabled />
                     </div>
                     <div>
                       <Label>Mother's Name</Label>
-                      <Input value={studentData.motherName} disabled={!isEditing} />
+                      <Input value={studentData.motherName} disabled />
                     </div>
                     <div>
                       <Label>Contact Number</Label>
-                      <Input value={studentData.parentContact} disabled={!isEditing} />
+                      <Input value={studentData.parentContact} disabled />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                       <Label>Father's Occupation</Label>
-                      <Input value={studentData.fatherOccupation} disabled={!isEditing} />
+                      <Input value={studentData.fatherOccupation} disabled />
                     </div>
                     <div>
                       <Label>Mother's Occupation</Label>
-                      <Input value={studentData.motherOccupation} disabled={!isEditing} />
+                      <Input value={studentData.motherOccupation} disabled />
                     </div>
                     <div>
                       <Label>Annual Income</Label>
-                      <Input value={studentData.annualIncome} disabled={!isEditing} />
+                      <Input value={studentData.annualIncome} disabled />
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
-
-            {isEditing && (
-              <div className="flex justify-end gap-4">
-                <Button variant="outline" onClick={() => setIsEditing(false)}>
-                  Cancel
-                </Button>
-                <Button onClick={() => setIsEditing(false)}>
-                  <Save className="mr-2 h-4 w-4" />
-                  Save Changes
-                </Button>
-              </div>
-            )}
           </TabsContent>
 
           {/* Academic Information */}
@@ -371,19 +350,19 @@ const Profile = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <Label>Bank Account Number</Label>
-                    <Input value={studentData.bankAccount} disabled={!isEditing} />
+                    <Input value={studentData.bankAccount} disabled />
                   </div>
                   <div>
                     <Label>Ration Card Number</Label>
-                    <Input value={studentData.rationCard} disabled={!isEditing} />
+                    <Input value={studentData.rationCard} disabled />
                   </div>
                   <div>
                     <Label>Aadhaar Card Number</Label>
-                    <Input value={studentData.aadhaarCard} disabled={!isEditing} />
+                    <Input value={studentData.aadhaarCard} disabled />
                   </div>
                   <div>
                     <Label>Blood Group</Label>
-                    <Input value={studentData.bloodGroup} disabled={!isEditing} />
+                    <Input value={studentData.bloodGroup} disabled />
                   </div>
                 </div>
               </CardContent>

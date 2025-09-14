@@ -222,9 +222,12 @@ const About = () => {
                   </div>
                 </div>
 
-                <Button className="w-full mt-4">
-                  Visit Official Website
-                </Button>
+                   <a href="https://svitatp.ac.in/public/" target="_blank" rel="noopener noreferrer">
+                    <Button className="w-full mt-4">
+                     Visit Official Website
+                   </Button>
+                   </a>
+
               </CardContent>
             </Card>
 
